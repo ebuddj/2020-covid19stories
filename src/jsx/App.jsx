@@ -187,7 +187,7 @@ class App extends Component {
         <div style={(this.state.line_chart_rendered === true) ? {display:'block'} : {display:'none'}}>
           <div style={{position:'relative', margin:'auto auto'}}>
             <div className={style.line_chart_meta}>
-              <div>{date[2] + ' ' + month_names[date[1]]}: {this.state.value} %<br /><span className={style.explainer}>COVID-19 stories of News Exchange</span></div>
+              <div>{date[2] + ' ' + month_names[date[1]]}: {this.state.value} %<br /><span className={style.explainer}>COVID-19 of News Exchange</span></div>
             </div>
             <canvas id={style.line_chart} ref={this.lineChartRef}></canvas>
           </div>
