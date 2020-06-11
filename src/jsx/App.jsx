@@ -114,6 +114,7 @@ class App extends Component {
               },
               ticks: {
                 autoSkip:false,
+                color: '#000',
                 fontSize:20,
                 fontStyle:'bold',
                 maxRotation:0,
