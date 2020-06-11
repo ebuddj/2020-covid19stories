@@ -115,7 +115,7 @@ class App extends Component {
                 suggestedMin: 0,
                 suggestedMax: 100,
               },
-              display:true,
+              display:false,
               scaleLabel:{
                 display:true,
                 labelString:'Covid-19'
