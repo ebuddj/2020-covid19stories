@@ -157,17 +157,13 @@ class App extends Component {
   }
   render() {
     let date = (this.state.date) ? this.state.date.split('-') : ['2020','01','09'];
-
-
     let path_prefix;
     if (location.href.match('localhost')) {
       path_prefix = './';
     }
     else {
       path_prefix = 'https://raw.githubusercontent.com/ebuddj/2020-covid19stories/master/public/';
-    }
-
-    
+    }    
     return (
       <div className={style.app}>
         <div className={style.date}></div>
