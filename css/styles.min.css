@@ -52,13 +52,20 @@ body {
 }
 .app___2khK2 .date___2zbrl {
   font-family: verdana;
-  font-size: 50px;
+  font-size: 30px;
   font-weight: bold;
   position: absolute;
   text-align: center;
   text-shadow: 1px 1px 1px #fff;
   top: 20px;
+  z-index: 2;
   width: 100%;
+}
+.app___2khK2 .logo___XsJkZ {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  width: 300px;
 }
 .app___2khK2 #line_chart___aZAmd {
   clear: both;
@@ -68,12 +75,15 @@ body {
   width: 100%;
 }
 .app___2khK2 .line_chart_meta___p3fCp {
-  bottom: 80px;
+  bottom: 40px;
   font-family: verdana;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
   position: absolute;
   right: 20px;
   text-align: right;
+}
+.app___2khK2 .line_chart_meta___p3fCp .explainer___1QzSr {
+  font-size: 30px;
 }
 
