@@ -7,6 +7,16 @@ import * as d3 from 'd3';
 // https://www.chartjs.org/
 import Chart from 'chart.js';
 
+const month_names = {
+  '01': 'January',
+  '02': 'February',
+  '03': 'March',
+  '04': 'April',
+  '05': 'May',
+  '06': 'June',
+  '07': 'July'
+};
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -78,7 +88,7 @@ class App extends Component {
             label:'Covid-19',
             radius:0
           }],
-          labels:['2020-01-09']
+          labels:[]
         },
         options:{
           hover:{
@@ -98,11 +108,16 @@ class App extends Component {
           responsive:true,
           scales:{
             xAxes:[{
-              display:false,
+              display:true,
+              gridLines:{
+                display: false
+              },
               ticks: {
-                autoSkip:true,
-                maxRotation:60,
-                minRotation:60
+                autoSkip:false,
+                fontSize:14,
+                fontStyle:'bold',
+                maxRotation:0,
+                minRotation:0
               },
               scaleLabel:{
                 display:false,
@@ -135,7 +150,8 @@ class App extends Component {
             value:price.value
           }));
 
-          options.data.labels.push(price.date);
+
+          options.data.labels.push((price.date.split('-')[2]) === '01' ?  month_names[price.date.split('-')[1]] : '');
           options.data.datasets[0].data.push(price.value);
           line_chart.update();
 
@@ -164,15 +180,6 @@ class App extends Component {
     else {
       path_prefix = 'https://raw.githubusercontent.com/ebuddj/2020-covid19stories/master/public/';
     }
-    let month_names = {
-      '01': 'January',
-      '02': 'February',
-      '03': 'March',
-      '04': 'April',
-      '05': 'May',
-      '06': 'June',
-      '07': 'July'
-    };
     return (
       <div className={style.app}>
         <div className={style.date}></div>
