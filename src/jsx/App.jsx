@@ -100,9 +100,9 @@ class App extends Component {
             xAxes:[{
               display:false,
               ticks: {
-                autoSkip: true,
-                maxRotation: 60,
-                minRotation: 60
+                autoSkip:true,
+                maxRotation:60,
+                minRotation:60
               },
               scaleLabel:{
                 display:false,
@@ -112,8 +112,8 @@ class App extends Component {
             yAxes:[{
               // https://www.chartjs.org/docs/latest/axes/cartesian/linear.html#axis-range-settings
               ticks: {
-                suggestedMin: 0,
-                suggestedMax: 100,
+                suggestedMin:0,
+                suggestedMax:100,
               },
               display:false,
               scaleLabel:{
@@ -156,13 +156,26 @@ class App extends Component {
     d3.json('./data/data.json', display);
   }
   render() {
+    let date = (this.state.date) ? this.state.date.split('-') : ['2020','01','09'];
+
+
+    let path_prefix;
+    if (location.href.match('localhost')) {
+      path_prefix = './';
+    }
+    else {
+      path_prefix = 'https://raw.githubusercontent.com/ebuddj/2020-covid19stories/public//';
+    }
+
+    
     return (
       <div className={style.app}>
-        <div className={style.date}>{this.state.date}</div>
+        <div className={style.date}></div>
+        <img src={path_prefix + 'img/ebu-logo.png'} className={style.logo}/>
         <div style={(this.state.line_chart_rendered === true) ? {display:'block'} : {display:'none'}}>
           <div style={{position:'relative', margin:'auto auto'}}>
             <div className={style.line_chart_meta}>
-              <div>{this.state.value}%</div>
+              <div>{date[2] + '.' + date[1] + '.' + date[0]}: {this.state.value} %<br /><span className={style.explainer}>COVID-19 stories from N.E. coverage</span></div>
             </div>
             <canvas id={style.line_chart} ref={this.lineChartRef}></canvas>
           </div>

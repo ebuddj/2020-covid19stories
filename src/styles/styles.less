@@ -23,15 +23,21 @@ body {
   }
   .date {
     font-family: verdana;
-    font-size: 50px;
+    font-size: 30px;
     font-weight: bold;
     position: absolute;
     text-align: center;
     text-shadow: 1px 1px 1px #fff;
     top: 20px;
+    z-index: 2;
     width: 100%;
   }
- 
+  .logo {
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    width: 300px;
+  }
   #line_chart {
     clear: both;
     height: 100%;
@@ -40,12 +46,15 @@ body {
     width: 100%;
   }
   .line_chart_meta {
-    bottom: 80px;
+    bottom: 40px;
     font-family: verdana;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: bold;
     position: absolute;
     right: 20px;
     text-align: right;
+    .explainer {
+      font-size: 30px;
+    }
   }
 }
