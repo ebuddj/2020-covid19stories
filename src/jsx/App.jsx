@@ -163,7 +163,16 @@ class App extends Component {
     }
     else {
       path_prefix = 'https://raw.githubusercontent.com/ebuddj/2020-covid19stories/master/public/';
-    }    
+    }
+    let month_names = {
+      '01': 'January',
+      '02': 'February',
+      '03': 'March',
+      '04': 'April',
+      '05': 'May',
+      '06': 'June',
+      '07': 'July'
+    };
     return (
       <div className={style.app}>
         <div className={style.date}></div>
@@ -171,7 +180,7 @@ class App extends Component {
         <div style={(this.state.line_chart_rendered === true) ? {display:'block'} : {display:'none'}}>
           <div style={{position:'relative', margin:'auto auto'}}>
             <div className={style.line_chart_meta}>
-              <div>{date[2] + '.' + date[1] + '.' + date[0]}: {this.state.value} %<br /><span className={style.explainer}>COVID-19 stories from N.E. coverage</span></div>
+              <div>{date[2] + ' ' + month_names[date[1]]}: {this.state.value} %<br /><span className={style.explainer}>COVID-19 stories of News Exchange</span></div>
             </div>
             <canvas id={style.line_chart} ref={this.lineChartRef}></canvas>
           </div>
