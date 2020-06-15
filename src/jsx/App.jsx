@@ -62,6 +62,8 @@ class App extends Component {
     let line_chart = false;
     function display(error, data) {
 
+      console.log('asdasd')
+
       if (error) {
         console.log(error)
         return false;
@@ -114,7 +116,7 @@ class App extends Component {
               },
               ticks: {
                 autoSkip:false,
-                color: '#000',
+                color:'#000',
                 fontSize:20,
                 fontStyle:'bold',
                 maxRotation:0,
@@ -188,7 +190,7 @@ class App extends Component {
         <div style={(this.state.line_chart_rendered === true) ? {display:'block'} : {display:'none'}}>
           <div style={{position:'relative', margin:'auto auto'}}>
             <div className={style.line_chart_meta}>
-              <div>{date[2] + ' ' + month_names[date[1]]}: {this.state.value} %<br /><span className={style.explainer}>COVID-19 of News Exchange</span></div>
+              <div>{date[2] + ' ' + month_names[date[1]]}<br /><span className={style.explainer}>COVID-19 =</span> {this.state.value}% <span className={style.explainer}>of News Exchange</span></div>
             </div>
             <canvas id={style.line_chart} ref={this.lineChartRef}></canvas>
           </div>
