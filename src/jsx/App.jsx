@@ -62,8 +62,6 @@ class App extends Component {
     let line_chart = false;
     function display(error, data) {
 
-      console.log('asdasd')
-
       if (error) {
         console.log(error)
         return false;
@@ -83,7 +81,7 @@ class App extends Component {
         data:{
           datasets:[{
             backgroundColor:'rgba(27, 64, 152, 0.7)',
-            borderColor:'##1b4098',
+            borderColor:'#1b4098',
             borderWidth:2,
             data:[self.state.value],
             fill:true,
@@ -152,7 +150,6 @@ class App extends Component {
             date:price.date,
             value:price.value
           }));
-
 
           options.data.labels.push((price.date.split('-')[2]) === '01' ?  month_names[price.date.split('-')[1]] : '');
           options.data.datasets[0].data.push(price.value);
