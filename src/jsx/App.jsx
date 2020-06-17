@@ -68,7 +68,7 @@ class App extends Component {
       }
 
         // console.log(data)
-      data.price = data.map((values) => {
+      data.values = data.map((values) => {
         return {
           date:values.date,
           value:values.average
@@ -145,17 +145,17 @@ class App extends Component {
       function updateChart() {
         // Update chart.
         let interval = setInterval(() => {
-          let price = data.price.shift();
+          let values = data.values.shift();
           self.setState((state, props) => ({
-            date:price.date,
-            value:price.value
+            date:values.date,
+            value:values.value
           }));
 
-          options.data.labels.push((price.date.split('-')[2]) === '01' ?  month_names[price.date.split('-')[1]] : '');
-          options.data.datasets[0].data.push(price.value);
+          options.data.labels.push((values.date.split('-')[2]) === '01' ?  month_names[values.date.split('-')[1]] : '');
+          options.data.datasets[0].data.push(values.value);
           line_chart.update();
 
-          if (data.price.length < 1) {
+          if (data.values.length < 1) {
             clearInterval(interval);
           }
         }, 200);
