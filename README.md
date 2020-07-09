@@ -2,7 +2,9 @@
 
 **Live demo** https://ebuddj.github.io/2020-covid19stories/
 
-## Share of Covid-19 stories on News Exchange
+## Share of Covid-19 stories on News Exchange (EBU)
+
+This is an EBU internal project to show how much Covid-19 related content was shared via the News Exchange during the outbreak. The animation and the technology can be used by the members.
 
 **Sources**
 * 
